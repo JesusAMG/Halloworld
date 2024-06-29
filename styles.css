@@ -51,3 +51,7 @@
   background-color: #e9ecef;
 }
 
+.tarea-elemento button {
+  margin-left: 10px;
+  cursor: pointer;
+}

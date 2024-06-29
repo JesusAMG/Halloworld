@@ -6,19 +6,17 @@ function agregarTarea() {
     const nuevaTarea = document.createElement("li");
     nuevaTarea.classList.add("tarea-elemento");
     nuevaTarea.appendChild(document.createTextNode(tarea));
-    
-    const iconoCompletar = document.createElement("span");
-    iconoCompletar.classList.add("iconos-material");
-    iconoCompletar.textContent = "Completada";
-    iconoCompletar.addEventListener("click", completarTarea);
-    nuevaTarea.appendChild(iconoCompletar);
-    
-    const iconoBorrar = document.createElement("span");
-    iconoBorrar.classList.add("iconos-material");
-    iconoBorrar.textContent = "Borrar";
-    iconoBorrar.addEventListener("click", borrarTarea);
-    nuevaTarea.appendChild(iconoBorrar);
-    
+
+    const botonCompletar = document.createElement("button");
+    botonCompletar.textContent = "Completada";
+    botonCompletar.addEventListener("click", completarTarea);
+    nuevaTarea.appendChild(botonCompletar);
+
+    const botonBorrar = document.createElement("button");
+    botonBorrar.textContent = "Borrar";
+    botonBorrar.addEventListener("click", borrarTarea);
+    nuevaTarea.appendChild(botonBorrar);
+
     listaPorHacer.appendChild(nuevaTarea);
     entrada.value = "";
   }
@@ -27,7 +25,8 @@ function agregarTarea() {
 function completarTarea(evento) {
   const tarea = evento.target.parentElement;
   const listaCompletadas = document.getElementById("lista-completadas");
-  tarea.removeChild(tarea.querySelector('.iconos-material'));
+  const botonCompletar = tarea.querySelector("button");
+  tarea.removeChild(botonCompletar);
   listaCompletadas.appendChild(tarea);
 }
 
