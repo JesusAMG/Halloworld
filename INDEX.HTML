@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Lista de Tareas</title>
+</head>
+<body class="cuerpo">
+    <div class="encabezado-personalizado">
+        <h1>Tareas</h1>
+    </div>
+    <div class="contenedor-agregar-tarea">
+        <input id="entrada-tarea" type="text" class="entrada-tarea" placeholder="Agregar una tarea">
+        <button onclick="agregarTarea()" class="btn btn-primary">Agregar</button>
+    </div>
+    <div class="contenedor-lista-tareas">
+        <div class="contenedor-por-hacer">
+            <h3>Por Hacer</h3>
+            <ul id="lista-por-hacer"></ul>
+        </div>
+        <div id="lista-completadas" class="contenedor-completadas">
+            <h3>Completadas</h3>
+        </div>
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
